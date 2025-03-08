@@ -6,4 +6,3 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-export const ROLE = process.env.SECRET_ROLE || ""
