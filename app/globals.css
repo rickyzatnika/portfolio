@@ -12,6 +12,58 @@
   @apply hidden;
 }
 
+/* .custom-cursor.active {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  z-index: 50;
+  transition: all 1s ease-in-out;
+} */
+
+.btn-section {
+  background: radial-gradient(
+    circle,
+    rgba(236, 247, 247, 0.452) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+#title {
+  font-family: var(--font-protest);
+}
+
+.menu-links {
+  font-family: var(--font-protest);
+}
+
+#text-animate {
+  h3 {
+    font-family: var(--font-protest);
+    color: rgb(10, 185, 185);
+  }
+}
+
+#locomotive-text {
+  p {
+    font-family: var(--font-pridi);
+  }
+}
+
+.clip {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.clip_2 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+.sd_text {
+  text-shadow: 3px 3px 12px #111111a8;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

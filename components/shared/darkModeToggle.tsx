@@ -10,10 +10,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 export function DarkModeToggle() {
   const { setTheme, theme } = useTheme() // Get the theme state
 
-  // Optional: Log the current theme to debug
-  React.useEffect(() => {
-    console.log("Current theme:", theme)
-  }, [theme])
 
   return (
     <DropdownMenu>
