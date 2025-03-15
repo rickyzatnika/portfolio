@@ -8,6 +8,7 @@ import { Label } from '../ui/label'
 import { useForm } from "react-hook-form"
 import { CreateSubscriptionAction } from '@/lib/action'
 import { toast } from 'sonner'
+import { motion } from 'framer-motion'
 
 const GetInTouch = () => {
 
@@ -48,7 +49,14 @@ const GetInTouch = () => {
   }
 
   return (
-    <section id="contact" className="w-full py-6 md:py-12 lg:py-24">
+    <motion.div
+      initial={{ y: '100%' }}
+      animate={{ y: 0 }}
+      transition={{
+        duration: 1,
+        damping: 50,
+        delay: 0.2,
+      }} id="contact" className="w-full py-6 md:py-12 lg:py-24">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -135,7 +143,7 @@ const GetInTouch = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.div>
   )
 }
 

@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Badge } from '../ui/badge'
 import { getProjectAction } from '@/lib/action'
 
+
 interface Project {
   id: string;
   title: string;
@@ -25,7 +26,8 @@ export default async function MyProjects() {
   const projects: Project[] = await getProjectAction();
 
   return (
-    <section id="projects" className="w-full ">
+    <div id="projects" className="w-full"
+    >
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -36,7 +38,7 @@ export default async function MyProjects() {
           </div>
           <div className="mx-auto grid w-full max-w-5xl gap-8 py-8 md:grid-cols-2 lg:grid-cols-3">
             {projects?.map((project: Project) => (
-              <Card key={project.id} className="overflow-hidden">
+              <Card key={project.id} className="overflow-hidden border-accent-foreground/20">
                 <div className="aspect-video relative">
                   <Image
                     src={project.imageUrl}
@@ -57,10 +59,9 @@ export default async function MyProjects() {
                         {item}
                       </Badge>
                     ))}
-
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" asChild>
                       <Link href={project.demoUrl || "#"}>View Demo</Link>
                     </Button>
                     <Button size="sm" variant="outline" asChild>
@@ -73,6 +74,6 @@ export default async function MyProjects() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

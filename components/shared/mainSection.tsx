@@ -1,12 +1,22 @@
+"use client"
+
 import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
-
+import { motion } from 'framer-motion'
 
 const MainSection = () => {
   return (
 
-    <section className="relative flex flex-col items-center justify-center py-6 lg:py-10">
+    <motion.section className="relative flex flex-col items-center justify-center py-6 lg:py-10"
+      initial={{ y: '20%' }}
+      animate={{ y: 0 }}
+      transition={{
+        duration: 1,
+        damping: 20,
+        delay: 0.2,
+      }}
+    >
       <div className="text-center">
         <span className="text-sm text-black/90 font-medium tracking-tight bg-gradient-to-tl from-purple-200/40 to-cyan-100/40 dark:from-purple-200/80 dark:to-cyan-100/80 shadow px-4 py-2 rounded-full">
           Hi, I&apos;m Ricky Zatnika
@@ -85,7 +95,7 @@ const MainSection = () => {
         </svg>
       </div>
 
-    </section>
+    </motion.section>
   )
 }
 
