@@ -12,20 +12,19 @@ const Footer = () => {
           <p className="text-sm">© {new Date().getFullYear()} Ricky Zatnika. All rights reserved</p><AuthModal />
         </div>
         <div className="flex gap-4">
-          <Link href="#" target="_blank" rel="noreferrer">
+          <Link href="https://github.com/rickyzatnika" target="_blank" rel="noreferrer">
             <Button variant="ghost" >
               GitHub
             </Button>
           </Link>
-          <Link href="#" target="_blank" rel="noreferrer">
+          <Link href="https://www.linkedin.com/in/ricky-zatnika" target="_blank" rel="noreferrer">
             <Button variant="ghost" >
               LinkedIn
             </Button>
           </Link>
-          <Link href="#">
+          <Link href="https://www.instagram.com/_zatnika">
             <Button variant="ghost" >
-              <Mail className="h-4 w-4" />
-              Email
+              Instagram
             </Button>
           </Link>
 

@@ -226,7 +226,7 @@ const Header = () => {
         id="menu-overlay"
         className="fixed top-0 left-0 w-screen h-screen py-[1em] px-[2em] flex flex-wrap  bg-gradient-to-tr from-purple-500/60 via-purple-300 to-purple-400/60 backdrop-blur-md z-20 clip_2"
       >
-        <div className="menu-overlay-bar  fixed top-0 left-0 w-screen p-[1em] px-[1em] md:px-[2em] flex justify-between items-center z-20">
+        <div className="menu-overlay-bar fixed top-0 left-0 w-screen p-[1em] px-[1em] md:px-[2em] flex justify-between items-center z-20">
           <Link
             id="button-logo"
             ref={(el) => {
@@ -294,11 +294,7 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
                 className="menu-info-cop text-left md:text-center"
               >
-                follow{" "}
-                <span className="font-bold cursor-none pointer-events-none text-xl font-serif">
-                  &
-                </span>{" "}
-                subscribe
+                follow me
               </p>
               <div
                 id="menu-info-col"
@@ -312,7 +308,8 @@ const Header = () => {
                   }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  href=""
+                  href="https://www.instagram.com/_zatnika"
+                  target="_blank"
                 >
                   IG
                 </Link>
@@ -323,9 +320,10 @@ const Header = () => {
                   }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  href=""
+                  href="https://github.com/rickyzatnika"
+                  target="_blank"
                 >
-                  FB
+                  GH
                 </Link>
                 <Link
                   id="button-in"
@@ -334,26 +332,15 @@ const Header = () => {
                   }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  href=""
+                  href="https://www.linkedin.com/in/ricky-zatnika"
+                  target="_blank"
                 >
                   IN
-                </Link>
-                <Link
-                  id="button-yt"
-                  ref={(el) => {
-                    buttonRefs.current[8] = el;
-                  }}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  href=""
-                >
-
                 </Link>
               </div>
             </div>
             <div className="menu-info-sos flex flex-col md:items-end">
               <p>rickyzatnika91@gmail.com</p>
-              <p>+62 812 3456 789</p>
             </div>
           </div>
         </div>
