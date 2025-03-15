@@ -2,12 +2,11 @@
 "use server"
 
 import prisma from "./db";
-import { projectSchema } from "./zodSchema";
+import { Message, messageSchema, projectSchema } from "./zodSchema";
 import { revalidatePath } from "next/cache";
 
 export async function AddProjectAction(prevState: any, formData: any) {
   console.log("🔥 AddProjectAction triggered", formData);
-
 
   const parsedTechnologies = formData.technologies || [];
 
@@ -105,3 +104,34 @@ export async function getProjectAction(): Promise<Project[]> {
 
 
 
+
+
+export async function CreateSubscriptionAction(prevState: any, formData: any) {
+  console.log("🔥 CreateSubscriptionAction triggered", formData);
+
+  // ✅ Validasi dengan Zod
+  const submission = messageSchema.safeParse({
+    ...formData,
+  })
+
+  if (!submission.success) {
+    console.log("❌ Validation failed:", submission.error);
+    return { error: submission.error.format() };
+  }
+  const { name, email, message } = submission.data;
+
+  try {
+    await prisma.subscription.create({
+      data: {
+        name,
+        email,
+        message,
+      },
+    });
+
+    return revalidatePath("/owner");
+  } catch (error) {
+    console.error("❌ Database error:", error);
+    return { error: "Failed to create subscription" };
+  }
+}

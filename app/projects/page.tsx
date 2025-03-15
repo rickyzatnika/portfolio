@@ -1,8 +1,11 @@
+import MyProjects from '@/components/shared/myProjects'
 import React from 'react'
 
 const ProjectsPage = () => {
     return (
-        <div>ProjectsPage</div>
+        <div className='py-24'>
+            <MyProjects />
+        </div>
     )
 }
 

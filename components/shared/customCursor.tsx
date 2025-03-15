@@ -7,7 +7,7 @@ import { useCursor } from "@/context/CursorContex";
 const CustomCursor = () => {
   const cursorContext = useCursor();
   const position = cursorContext?.position ?? { x: 0, y: 0 };
-  const isHover = cursorContext?.isHover ?? false;
+  // const isHover = cursorContext?.isHover ?? false;
 
   return (
     <div

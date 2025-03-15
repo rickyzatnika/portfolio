@@ -59,7 +59,7 @@ const ProjectForm = () => {
   };
 
   const onSubmit = async (data: { imageUrl: string; technologies: { name: string }[], title: string, description: string, sourceCodeUrl?: string, demoUrl?: string }) => {
-    toast("Submit clicked!");
+
     console.log("🛠️ Data sebelum dikirim:", {
       ...data,
       technologies,

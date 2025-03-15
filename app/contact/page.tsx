@@ -1,8 +1,9 @@
+import GetInTouch from '@/components/shared/getInTouch'
 import React from 'react'
 
 const ContactPage = () => {
     return (
-        <div>ContactPage</div>
+        <GetInTouch />
     )
 }
 

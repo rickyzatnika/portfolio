@@ -186,8 +186,8 @@ const Header = () => {
 
 
   return (
-    <div ref={containerRef} className="menu-container ">
-      <div className="fixed top-0 left-0 w-screen py-[1em] px-[1em] md:px-[2em] flex justify-between items-center z-10">
+    <div ref={containerRef} className="w-full  ">
+      <div className="fixed bg-black/80 text-white backdrop-blur-md top-0 left-0 w-screen py-[1em] px-[1em] md:px-[2em] flex justify-between items-center z-10">
         <Link
           id="button-logo"
           ref={(el) => {
@@ -213,9 +213,10 @@ const Header = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={toggleMenu}
-              className={`sd_text text-xl lg:text-2xl `}
+              className={`sd_text text-md lg:text-lg `}
             >
-              <MenuIcon className='size-10' />
+              {/* <MenuIcon className='size-8' /> */}
+              MENU
             </button>
           </div>
         )}
@@ -223,7 +224,7 @@ const Header = () => {
       </div>
       <div
         id="menu-overlay"
-        className="fixed top-0 left-0 w-screen h-screen py-[1em] px-[2em] flex flex-wrap  bg-gradient-to-tr from-[#00B8F4] to-[#A0E0F0] z-20 clip_2"
+        className="fixed top-0 left-0 w-screen h-screen py-[1em] px-[2em] flex flex-wrap  bg-gradient-to-tr from-purple-500/60 via-purple-300 to-purple-400/60 backdrop-blur-md z-20 clip_2"
       >
         <div className="menu-overlay-bar  fixed top-0 left-0 w-screen p-[1em] px-[1em] md:px-[2em] flex justify-between items-center z-20">
           <Link
@@ -249,7 +250,7 @@ const Header = () => {
             onClick={toggleMenu}
             className={` menu-close-icon  text-white sd_text font-bold flex flex-2 items-end justify-end text-xl lg:text-2xl  `}
           >
-            <X className='size-10' />
+            <X className='size-8' />
           </button>
 
         </div>
@@ -313,7 +314,7 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                   href=""
                 >
-
+                  IG
                 </Link>
                 <Link
                   id="button-fb"
@@ -324,7 +325,7 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                   href=""
                 >
-
+                  FB
                 </Link>
                 <Link
                   id="button-in"
@@ -335,7 +336,7 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                   href=""
                 >
-
+                  IN
                 </Link>
                 <Link
                   id="button-yt"
@@ -351,7 +352,7 @@ const Header = () => {
               </div>
             </div>
             <div className="menu-info-sos flex flex-col md:items-end">
-              <p>info@tema.com</p>
+              <p>rickyzatnika91@gmail.com</p>
               <p>+62 812 3456 789</p>
             </div>
           </div>

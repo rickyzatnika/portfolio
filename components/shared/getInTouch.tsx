@@ -1,14 +1,54 @@
+"use client"
+
 import React from 'react'
 import { Button } from '../ui/button'
 import { Mail } from 'lucide-react'
 import Link from 'next/link'
 import { Label } from '../ui/label'
-import { Input } from '../ui/input'
-import { Textarea } from '../ui/textarea'
+import { useForm } from "react-hook-form"
+import { CreateSubscriptionAction } from '@/lib/action'
+import { toast } from 'sonner'
 
 const GetInTouch = () => {
+
+  const { register, handleSubmit, setValue, reset, formState: { errors, isSubmitting } } = useForm<{
+    name: string;
+    email: string;
+    message: string;
+
+  }>({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  })
+
+  const onSubmit = async (data: { name: string; email: string; message: string; }) => {
+
+    try {
+      await CreateSubscriptionAction(null, {
+        ...data
+      })
+      reset()
+      toast.success("Message sent successfully", {
+        duration: 5000,
+        icon: "🚀",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+
+      })
+    } catch (error) {
+      console.error("🚨 Error:", error);
+      toast.error("Failed to send message")
+    }
+  }
+
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="contact" className="w-full py-6 md:py-12 lg:py-24">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -42,7 +82,7 @@ const GetInTouch = () => {
             </div>
             <div className="flex flex-col gap-4">
               <h3 className="text-xl font-bold">Send Me a Message</h3>
-              <form className="grid gap-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
                 <div className="grid gap-2">
                   <Label
                     htmlFor="name"
@@ -50,11 +90,13 @@ const GetInTouch = () => {
                   >
                     Name
                   </Label>
-                  <Input
+                  <input
                     id="name"
+                    {...register("name", { required: true })}
                     className="flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your name"
                   />
+                  {errors.name && <span className="text-red-500 text-left text-sm">*This field is required</span>}
                 </div>
                 <div className="grid gap-2">
                   <Label
@@ -63,12 +105,14 @@ const GetInTouch = () => {
                   >
                     Email
                   </Label>
-                  <Input
+                  <input
                     id="email"
                     type="email"
+                    {...register("email", { required: true })}
                     className="flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none  focus-visible:ring-0  disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your email"
                   />
+                  {errors.email && <span className="text-red-500 text-left text-sm">*This field is required</span>}
                 </div>
                 <div className="grid gap-2">
                   <Label
@@ -77,13 +121,15 @@ const GetInTouch = () => {
                   >
                     Message
                   </Label>
-                  <Textarea
+                  <textarea
                     id="message"
+                    {...register("message", { required: true })}
                     className="flex min-h-[120px] w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0  disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your message"
                   />
+                  {errors.message && <span className="text-red-500 text-left text-sm">*This field is required</span>}
                 </div>
-                <Button type="submit">Send Message</Button>
+                <Button type="submit">{isSubmitting ? "Submitting..." : "Submit"}</Button>
               </form>
             </div>
           </div>
