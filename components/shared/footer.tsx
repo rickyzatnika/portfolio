@@ -17,12 +17,12 @@ const Footer = () => {
               GitHub
             </Button>
           </Link>
-          <Link href="https://www.linkedin.com/in/ricky-zatnika" target="_blank" rel="noreferrer">
+          <Link href="https://www.linkedin.com/in/ricky-zatnika-375436254" target="_blank" rel="noreferrer">
             <Button variant="ghost" >
               LinkedIn
             </Button>
           </Link>
-          <Link href="https://www.instagram.com/_zatnika">
+          <Link href="https://www.instagram.com/_zatnika" target="_blank" rel="noreferrer">
             <Button variant="ghost" >
               Instagram
             </Button>

@@ -310,6 +310,7 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                   href="https://www.instagram.com/_zatnika"
                   target="_blank"
+                  rel='noreferrer'
                 >
                   IG
                 </Link>
@@ -322,6 +323,7 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                   href="https://github.com/rickyzatnika"
                   target="_blank"
+                  rel='noreferrer'
                 >
                   GH
                 </Link>
@@ -332,8 +334,9 @@ const Header = () => {
                   }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  href="https://www.linkedin.com/in/ricky-zatnika"
+                  href="https://www.linkedin.com/in/ricky-zatnika-375436254"
                   target="_blank"
+                  rel='noreferrer'
                 >
                   IN
                 </Link>
