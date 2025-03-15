@@ -28,7 +28,7 @@ const About = () => {
             damping: 20,
             delay: 0.2,
           }}
-          className="w-full "
+          className="w-full py-4 md:py-8"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 px-0 md:px-4 items-start">
             <div className="col-span-1 lg:col-span-4 ">
